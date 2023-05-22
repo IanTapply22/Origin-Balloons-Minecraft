@@ -1,0 +1,4 @@
+name: OriginBalloons
+version: '${project.version}'
+main: me.iantapply.originballoons.OriginBalloons
+api-version: 1.19
