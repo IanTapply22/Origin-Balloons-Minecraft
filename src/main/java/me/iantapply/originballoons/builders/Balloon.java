@@ -45,23 +45,6 @@ public class Balloon {
     }
 
     /**
-     * Removes the balloons functionality
-     */
-    public void remove() {
-        Node current = tentacle;
-
-        // Traverse the node chain and set child references to null
-        while (current != null) {
-            Node next = current.child;
-            current.child.remove();
-            current.child = null;
-            current = next;
-        }
-
-        // Reset the tentacle reference
-    }
-
-    /**
      * Runs the balloons' functionality that needs to loop infinitely
      */
     public void run() {

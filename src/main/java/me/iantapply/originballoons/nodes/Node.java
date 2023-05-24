@@ -1,7 +1,5 @@
 package me.iantapply.originballoons.nodes;
 
-import lombok.Getter;
-import lombok.Setter;
 import me.iantapply.originballoons.OriginBalloons;
 import me.iantapply.originballoons.balloonTypes.BalloonType;
 import org.bukkit.Bukkit;
@@ -212,9 +210,5 @@ public class Node {
         this.balloonArmorStand.setHeadPose(calculateHeadPose(pointAVector, pointBVector));
         // Teleport it to the correct location
         this.balloonArmorStand.teleport(new Location(Bukkit.getWorld("world"), (pointA.x + pointB.x) / 2.0, (pointA.y + pointB.y) / 2.0, (pointA.z + pointA.z) / 2.0)); // Change Y value to the right height
-    }
-
-    public void remove() {
-        this.balloonArmorStand.setHealth(0.0);
     }
 }

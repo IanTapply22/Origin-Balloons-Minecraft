@@ -1,4 +1,7 @@
 name: OriginBalloons
 version: '${project.version}'
+website: ian-tapply.me
+author: 'Ian Tapply'
+description: 'A recreation of the Origin Realms multi-part cosmetic balloons.'
 main: me.iantapply.originballoons.OriginBalloons
 api-version: 1.19

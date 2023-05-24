@@ -20,10 +20,4 @@ public class PlayerJoin implements Listener {
 //        lunarDragonBalloon.initialize();
 //        lunarDragonBalloon.run();
     }
-
-    @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent event) {
-        Balloon trainBalloon = new BalloonBuilder(new Train(), event.getPlayer()).build();
-        trainBalloon.remove();
-    }
 }

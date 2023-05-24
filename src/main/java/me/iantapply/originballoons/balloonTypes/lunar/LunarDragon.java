@@ -1,5 +1,6 @@
 package me.iantapply.originballoons.balloonTypes.lunar;
 
+import me.iantapply.originballoons.balloonTypes.BalloonModel;
 import me.iantapply.originballoons.balloonTypes.BalloonType;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -15,7 +16,7 @@ public class LunarDragon implements BalloonType {
     @Override
     public double distanceBetweenNodes() {
         return 1.7;
-    } // TODO
+    }
 
     @Override
     public double headNodeOffset() {
@@ -33,47 +34,17 @@ public class LunarDragon implements BalloonType {
     }
 
     @Override
-    public double maxNodeJointAngle() {
-        return 35.0;
-    }
-
-    @Override
-    public double yAxisInterpolation() {
-        return 0.35;
-    }
-
-    @Override
-    public double turningSplineInterpolation() {
-        return 0.50;
-    }
-
-    @Override
     public ItemStack headNodeItem() {
-        ItemStack item = new ItemStack(Material.LEATHER_HORSE_ARMOR);
-        LeatherArmorMeta itemMeta = (LeatherArmorMeta) item.getItemMeta();
-        itemMeta.setColor(Color.fromRGB(255, 0, 0));
-        itemMeta.setCustomModelData(10154);
-        item.setItemMeta(itemMeta);
-        return item;
+        return BalloonModel.createColouredModel(Material.LEATHER_HORSE_ARMOR, Color.RED, 10154);
     }
 
     @Override
     public ItemStack bodyNodeItem() {
-        ItemStack item = new ItemStack(Material.LEATHER_HORSE_ARMOR);
-        LeatherArmorMeta itemMeta = (LeatherArmorMeta) item.getItemMeta();
-        itemMeta.setColor(Color.fromRGB(255, 0, 0));
-        itemMeta.setCustomModelData(10155);
-        item.setItemMeta(itemMeta);
-        return item;
+        return BalloonModel.createColouredModel(Material.LEATHER_HORSE_ARMOR, Color.RED, 10155);
     }
 
     @Override
     public ItemStack tailNodeItem() {
-        ItemStack item = new ItemStack(Material.LEATHER_HORSE_ARMOR);
-        LeatherArmorMeta itemMeta = (LeatherArmorMeta) item.getItemMeta();
-        itemMeta.setColor(Color.fromRGB(255, 0, 0));
-        itemMeta.setCustomModelData(10156);
-        item.setItemMeta(itemMeta);
-        return item;
+        return BalloonModel.createColouredModel(Material.LEATHER_HORSE_ARMOR, Color.RED, 10156);
     }
 }
