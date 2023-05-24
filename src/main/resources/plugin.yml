@@ -1,5 +1,5 @@
 name: OriginBalloons
-version: '${project.version}'
+version: '1.0.3'
 website: ian-tapply.me
 author: 'Ian Tapply'
 description: 'A recreation of the Origin Realms multi-part cosmetic balloons.'

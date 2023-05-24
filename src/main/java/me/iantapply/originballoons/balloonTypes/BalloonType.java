@@ -6,6 +6,16 @@ import org.bukkit.inventory.ItemStack;
 
 public interface BalloonType {
     /**
+     * The name of the balloon that will be shown in the GUI
+     * @return The name of the balloon
+     */
+    default String balloonName(){return "Example Balloon";}
+    /**
+     * The description of the balloon that will be shown in the GUI
+     * @return The description of the balloon
+     */
+    default String balloonDescription(){return "Example Description";}
+    /**
      * Number of nodes/models within the balloon
      * @return The amount of nodes
      */
