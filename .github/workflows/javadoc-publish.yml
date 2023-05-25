@@ -2,6 +2,11 @@ name: 'Publish JavaDoc'
 
 on:
   push:
+    # Triggers the workflow on push or pull request events but only for the "main" branch
+    branches: [ "main" ]
+    paths: [ '**.java']
+  pull_request:
+    branches: [ "main" ]
     paths: [ '**.java']
   
   workflow_dispatch:
