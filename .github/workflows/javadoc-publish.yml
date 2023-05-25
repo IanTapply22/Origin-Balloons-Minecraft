@@ -27,4 +27,4 @@ jobs:
     
     steps:
      - name: Publish JavaDoc
-       uses: ren130302/publish-javadoc@test
+       uses: ren130302/publish-javadoc@v1
