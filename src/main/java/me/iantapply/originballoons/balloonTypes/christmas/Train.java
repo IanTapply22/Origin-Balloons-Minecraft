@@ -2,10 +2,8 @@ package me.iantapply.originballoons.balloonTypes.christmas;
 
 import me.iantapply.originballoons.balloonTypes.BalloonModel;
 import me.iantapply.originballoons.balloonTypes.BalloonType;
-import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 public class Train implements BalloonType {
     @Override
@@ -16,6 +14,11 @@ public class Train implements BalloonType {
     @Override
     public double distanceBetweenNodes() {
         return 2.0;
+    }
+
+    @Override
+    public double yAxisInterpolation() {
+        return 0.2;
     }
 
     @Override

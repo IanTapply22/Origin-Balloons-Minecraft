@@ -1,5 +1,6 @@
 package me.iantapply.originballoons.balloonTypes.christmas;
 
+import me.iantapply.originballoons.balloonTypes.BalloonModel;
 import me.iantapply.originballoons.balloonTypes.BalloonType;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -17,7 +18,7 @@ public class Sleigh implements BalloonType {
 
     @Override
     public ItemStack headNodeItem() {
-        return new ItemStack(Material.STICK);
+        return BalloonModel.createBlankModel(Material.LEATHER_HORSE_ARMOR, 10279);
     }
 
     @Override
@@ -27,6 +28,6 @@ public class Sleigh implements BalloonType {
 
     @Override
     public ItemStack tailNodeItem() {
-        return new ItemStack(Material.STICK);
+        return BalloonModel.createBlankModel(Material.LEATHER_HORSE_ARMOR, 10278);
     }
 }

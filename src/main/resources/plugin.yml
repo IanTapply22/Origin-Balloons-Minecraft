@@ -1,7 +1,13 @@
 name: OriginBalloons
-version: '1.0.3'
+version: '1.1.0'
 website: ian-tapply.me
 author: 'Ian Tapply'
 description: 'A recreation of the Origin Realms multi-part cosmetic balloons.'
 main: me.iantapply.originballoons.OriginBalloons
-api-version: 1.19
+api-version: 1.20
+commands:
+  balloon:
+    description: 'Spawn a balloon.'
+    usage: /<command>]
+    permission: originballoons.spawn
+    aliases: [spawnballoon]

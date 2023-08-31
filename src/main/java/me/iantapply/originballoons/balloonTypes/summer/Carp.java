@@ -1,5 +1,6 @@
 package me.iantapply.originballoons.balloonTypes.summer;
 
+import me.iantapply.originballoons.balloonTypes.BalloonModel;
 import me.iantapply.originballoons.balloonTypes.BalloonType;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -12,8 +13,8 @@ public class Carp implements BalloonType {
 
     @Override
     public double distanceBetweenNodes() {
-        return 2.0;
-    } // TODO
+        return 1.5;
+    }
 
     @Override
     public double headNodeOffset() {
@@ -36,27 +37,17 @@ public class Carp implements BalloonType {
     }
 
     @Override
-    public double yAxisInterpolation() {
-        return 0.35;
-    }
-
-    @Override
-    public double turningSplineInterpolation() {
-        return 0.50;
-    }
-
-    @Override
     public ItemStack headNodeItem() {
-        return new ItemStack(Material.STICK);
+        return BalloonModel.createBlankModel(Material.LEATHER_HORSE_ARMOR, 10214);
     }
 
     @Override
     public ItemStack bodyNodeItem() {
-        return new ItemStack(Material.STICK);
+        return BalloonModel.createBlankModel(Material.LEATHER_HORSE_ARMOR, 10215);
     }
 
     @Override
     public ItemStack tailNodeItem() {
-        return new ItemStack(Material.STICK);
+        return BalloonModel.createBlankModel(Material.LEATHER_HORSE_ARMOR, 10216);
     }
 }

@@ -50,8 +50,14 @@ public class Node {
         this.yAxisInterpolation = yAxisInterpolation;
         this.turningSplineInterpolation = turningSplineInterpolation;
 
-        balloonArmorStand = Objects.requireNonNull(OriginBalloons.getInstance().getServer().getWorld("world")).spawn(new Location(OriginBalloons.getInstance().getServer().getWorld("world"), x, balloonOwner.getLocation().getY() + 1, z), ArmorStand.class); // Change Y value to the right height
+        balloonArmorStand = Objects.requireNonNull(OriginBalloons.getInstance().getServer().getWorld("world")).spawn(new Location(OriginBalloons.getInstance().getServer().getWorld("world"), x, balloonOwner.getLocation().getY() + 2, z), ArmorStand.class); // Change Y value to the right height
         balloonArmorStand.setVisible(false);
+
+        // set leadh holder to balloon owner after a 5 second delay
+        Bukkit.getScheduler().runTaskLater(OriginBalloons.getInstance(), () -> {
+            balloonArmorStand.setLeashHolder(balloonOwner);
+        }, 100L);
+//        balloonArmorStand.setLeashHolder(balloonOwner);
 
         float dx = length * (float)cos(0);
         float dz = length * (float)sin(0);
@@ -75,7 +81,7 @@ public class Node {
         this.yAxisInterpolation = yAxisInterpolation;
         this.turningSplineInterpolation = turningSplineInterpolation;
 
-        balloonArmorStand = Objects.requireNonNull(OriginBalloons.getInstance().getServer().getWorld("world")).spawn(new Location(OriginBalloons.getInstance().getServer().getWorld("world"), this.pointA.x, balloonOwner.getLocation().getY() + 1, this.pointA.z), ArmorStand.class); // Change Y value to the right height
+        balloonArmorStand = Objects.requireNonNull(OriginBalloons.getInstance().getServer().getWorld("world")).spawn(new Location(OriginBalloons.getInstance().getServer().getWorld("world"), this.pointA.x, balloonOwner.getLocation().getY() + 2, this.pointA.z), ArmorStand.class); // Change Y value to the right height
         balloonArmorStand.setVisible(false);
 
         float dx = length * (float)cos(0);
@@ -200,7 +206,6 @@ public class Node {
             this.balloonArmorStand.setItem(EquipmentSlot.HEAD, this.balloonType.tailNodeItem());
         } else {
             this.balloonArmorStand.setItem(EquipmentSlot.HEAD, this.balloonType.bodyNodeItem());
-
         }
 
         Vector pointAVector = new Vector(this.pointA.x, this.pointA.y, this.pointA.z);
@@ -209,6 +214,12 @@ public class Node {
         // Set the direction for the armor stand to face
         this.balloonArmorStand.setHeadPose(calculateHeadPose(pointAVector, pointBVector));
         // Teleport it to the correct location
-        this.balloonArmorStand.teleport(new Location(Bukkit.getWorld("world"), (pointA.x + pointB.x) / 2.0, (pointA.y + pointB.y) / 2.0, (pointA.z + pointA.z) / 2.0)); // Change Y value to the right height
+        this.balloonArmorStand.teleport(new Location(this.balloonArmorStand.getWorld(), (pointA.x + pointB.x) / 2.0, (pointA.y + pointB.y) / 2.0, (pointA.z + pointB.z) / 2.0)); // Change Y value to the right height
+    }
+
+    public void destroy() {
+        if (balloonArmorStand != null && !balloonArmorStand.isDead()) {
+            balloonArmorStand.remove();
+        }
     }
 }
