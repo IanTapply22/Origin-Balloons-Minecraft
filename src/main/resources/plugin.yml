@@ -6,8 +6,15 @@ description: 'A recreation of the Origin Realms multi-part cosmetic balloons.'
 main: me.iantapply.originballoons.OriginBalloons
 api-version: 1.20
 commands:
-  balloon:
+  balloons:
+    description: 'Opens up a catalog of balloons to spawn'
+    usage: /balloons
+    aliases: [balloongui]
+  destroyballoon:
+    description: 'Destroys the current balloon on a player if they have one'
+    usage: /destroyballoon
+    aliases: [db]
+  spawnballoon:
     description: 'Spawn a balloon.'
-    usage: /<command>]
-    permission: originballoons.spawn
-    aliases: [spawnballoon]
+    usage: /spawnballoon <balloon>
+    aliases: [sb]

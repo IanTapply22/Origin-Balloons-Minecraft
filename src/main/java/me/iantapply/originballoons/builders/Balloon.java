@@ -59,6 +59,10 @@ public class Balloon {
      * Runs the balloons' functionality that needs to loop infinitely
      */
     public void run() {
+        // Ensure the previous runnable is canceled before creating a new one
+        if (runnable != null) {
+            runnable.cancel();
+        }
 
         long timeInTicks = 1;
             runnable = new BukkitRunnable() {
